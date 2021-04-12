@@ -1,0 +1,21 @@
+<h1> Add New Artist </h1>
+
+<% if @artist.errors.any? %>
+    <h3> There were some errors trying to add the new artist: </h3>
+    <% @artist.errors.full_messages.each do |error_message| %>
+        <p> <%= error_message %> </p>
+    <% end %>
+<% end %>
+
+<%= form_for @artist do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+
+    <%= f.submit %>
+<% end %>
